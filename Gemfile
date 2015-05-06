@@ -30,6 +30,8 @@ gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'haml-rails'
 
+gem 'humanize'
+
 gem 'hirb',                      group: :development
 gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger',  group: :development
 gem 'better_errors'
