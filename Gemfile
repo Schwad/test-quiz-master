@@ -30,6 +30,19 @@ gem 'bootstrap-sass', '~> 3.3.4'
 
 gem 'haml-rails'
 
+gem 'hirb',                      group: :development
+gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger',  group: :development
+gem 'better_errors'
+group :development, :test do
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'pry-byebug'
+end
+group :test do
+  gem 'capybara'
+  gem 'launchy'
+end
+
+
 group :development, :test do
   gem 'rspec-rails'
 end
