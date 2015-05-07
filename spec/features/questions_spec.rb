@@ -2,8 +2,6 @@ require 'rails_helper'
 
 feature 'Question_question management' do
 
-  ##FIND ELEMENTS FOR SECOND TWO AND ADD TEST TO CHECK COUNT
-
   background do
     visit root_path
     click_link 'Add a new question'

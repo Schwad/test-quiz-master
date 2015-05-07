@@ -35,11 +35,9 @@ class QuestionsController < ApplicationController
      @answer = params[:answer][:answer]
      if Question.find(params[:id]).is_correct?(params[:answer][:answer])
       session[:user_check] = "Correct! You got it right!"
-      # binding.pry
       redirect_to root_path
     else
       session[:user_check] = "Aww, you got it wrong!"
-      # binding.pry
       redirect_to root_path
     end
   end
