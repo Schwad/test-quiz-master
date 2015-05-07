@@ -43,6 +43,7 @@ gem 'pry-byebug'
 
 gem 'redactor-rails'
 
+gem 'database_cleaner'
 
 group :test do
   gem 'capybara'
