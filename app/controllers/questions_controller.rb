@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.all
+    @user_check = session[:user_check]
   end
 
   def new
@@ -27,7 +28,16 @@ class QuestionsController < ApplicationController
   end
 
   def answer
-    # TODO
+     @answer = params[:answer][:answer]
+     if Question.find(params[:id]).is_correct?(params[:answer][:answer])
+      session[:user_check] = "Correct! You got it right!"
+      # binding.pry
+      redirect_to root_path
+    else
+      session[:user_check] = "Aww, you got it wrong!"
+      # binding.pry
+      redirect_to root_path
+    end
   end
 
   private

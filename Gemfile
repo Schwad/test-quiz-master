@@ -37,8 +37,9 @@ gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger',
 gem 'better_errors'
 group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
-  gem 'pry-byebug'
 end
+gem 'pry-byebug'
+
 group :test do
   gem 'capybara'
   gem 'launchy'

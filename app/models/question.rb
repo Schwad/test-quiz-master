@@ -4,21 +4,21 @@ class Question < ActiveRecord::Base
   validates_presence_of :answer
 
   def is_correct?(submission)
-    if submission.is_num?
+    if is_stringable_num?(submission)
       submission = submission.to_i.humanize
     end
 
-    if answer.is_num?
-      answer = submission.to_i.humanize
+    if is_stringable_num?(self.answer)
+      self.answer = submission.to_i.humanize
     end
 
-    return answer.downcase.delete(" ") == submission.downcase.delete(" ")
+    return self.answer.downcase.delete(" ") == submission.downcase.delete(" ")
   end
 
   private
 
-  def is_num?
-    self.to_i > 0
+  def is_stringable_num?(word)
+    word.to_i > 0
   end
 
 end
