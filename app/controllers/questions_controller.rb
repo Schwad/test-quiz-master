@@ -27,6 +27,10 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def show
+    @question.question = @question.question.html_safe
+  end
+
   def answer
      @answer = params[:answer][:answer]
      if Question.find(params[:id]).is_correct?(params[:answer][:answer])
