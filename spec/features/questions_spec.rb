@@ -21,10 +21,20 @@ feature 'Question_question management' do
     expect(page).to have_content 'blue'
   end
 
+  scenario "increases question count" do
+    visit root_path
+    expect{
+      click_link 'Add a new question'
+      fill_in 'question_question', with: "What is the best part of a rails developer's day?"
+      fill_in 'question_answer', with: "Using capybara!"
+      click_button 'Create Question'
+      }.to change(Question, :count).by(1)
+  end
+
   scenario "passes a correct answer" do
     visit root_path
     click_link 'What is the meaning of life?'
-    fill_in 'question_answer', with: 'To do good'
+    fill_in 'answer_answer', with: 'To do good'
     click_button 'Submit answer'
     expect(page).to have_content 'Aww, you got it wrong!'
 
@@ -34,7 +44,7 @@ feature 'Question_question management' do
     visit root_path
 
     click_link 'What is the meaning of life?'
-    fill_in 'question_answer', with: "Don't know"
+    fill_in 'answer_answer', with: "Don't know"
     click_button 'Submit answer'
     expect(page).to have_content 'Correct! You got it right!'
   end
