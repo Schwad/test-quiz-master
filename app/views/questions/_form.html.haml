@@ -7,10 +7,13 @@
 
   .form-group
     = f.label :question
-    = f.text_area :question, class: 'form-control'
+    = f.text_area :question, class: 'form-control redactor', editor: "", rows: 40, cols: 120
 
   .form-group
     = f.label :answer
     = f.text_area :answer, class: 'form-control'
 
   = f.submit nil, class: 'btn btn-primary'
+
+
+  / <%= text_area_tag :editor, "", :class => "redactor", :rows => 40, :cols => 120 %>

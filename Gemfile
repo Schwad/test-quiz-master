@@ -40,6 +40,10 @@ group :development, :test do
 end
 gem 'pry-byebug'
 
+
+gem 'redactor-rails'
+
+
 group :test do
   gem 'capybara'
   gem 'launchy'
