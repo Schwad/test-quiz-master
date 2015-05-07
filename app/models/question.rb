@@ -1,5 +1,8 @@
 class Question < ActiveRecord::Base
 
+  #need to kill all bootsy
+  #wysiwyg try this: https://github.com/froala/wysiwyg-rails
+  #research capybara testing etc // tomorrow A.M.
   validates_presence_of :question
   validates_presence_of :answer
 
